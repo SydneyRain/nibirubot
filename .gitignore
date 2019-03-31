@@ -1,0 +1,5 @@
+node_modules/
+config.yml
+bwd/*
+*.code-workspace
+package-lock.json

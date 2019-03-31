@@ -1,0 +1,42 @@
+# NibiruBot Config Example File
+# To use this, rename or duplicate this file from `config.yml.example` 
+# to `.config.yml` and fill in the details below.
+
+botConfig:
+    # The bot token to login to Discord. Get a token from here: https://discordapp.com/developers/applications/me
+    botToken: 'YOUR_TOKEN_HERE'
+
+    # This is the default prefix that the bot will use. This can be changed to something like 
+    # '!', 'nb!', '#', etc if you want.
+    botPrefix: '+' 
+
+    # This is the bot owner ID. You can change this on your own by going to Discord, enabling  
+    # Developer Mode (gear icon -> appearance -> developer mode), then right clicking on your 
+    # name > Copy ID.
+    botOwnerID: '145788286156144641'
+
+databaseConfig:
+    # Database port.
+    databasePort: '5432'
+    # Database host 
+    databaseHost: 'localhost'
+    # Database name
+    databaseName: 'nibirubot'
+    # Database username
+    databaseUsername: 'admin'
+    # Database password
+    databasePassword: 'admin'
+
+apiKeys:
+    # Discord Bot List API key. This is only recommended if you are adding this bot to discordbots.org. 
+    discordBotListAPIKey: ''
+
+    # DiscordBotList.com API key. This is only recommended if you are adding this bot to discordbotlist.com.
+    discordBotListDotComAPIKey: ''
+
+    # Divine Discord Bot List API key. This is only recommended if you are adding this bot to divinediscordbots.com.
+    divineDiscordBotListAPIKey: ''
+
+    # OpenWeatherMap API key. Requires registration but is otherwise free. You can get an API key here: 
+    # https://openweathermap.org/
+    openWeatherMapAPIKey: ''
