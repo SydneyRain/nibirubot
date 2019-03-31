@@ -1,14 +1,16 @@
+ /* en-US language file 
+ * This is the English (United States) language file. If you want to translate Nibiru into another language,
+ * you can use this as a starting point!
+ */
+
 const { Language } = require('klasa');
 
 module.exports = class extends Language {
 
-	constructor(...args) {
-		/**
-		 * Any default options can be omitted completely.
-		 */
-		super(...args,);
+      constructor(...args) {
+      super(...args,);
 
-		this.language = {
+      this.language = {
             DEFAULT: (key) => `${key} has not been localized for en-US yet.`,
 
             //8-Ball
