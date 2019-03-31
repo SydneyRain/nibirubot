@@ -10,8 +10,8 @@ module.exports = class extends Command {
     constructor(...args) {
         super(...args, {
             cooldown: 3,
-            description: 'Prints a randomly generated waifu from www.thiswaifudoesnotexist.net.',
-            extendedHelp: '+waifu :: Prints a random waifu.',
+            description: language => language.get("ACHIEVEMENT_DESCRIPTION"),
+            extendedHelp: language => language.get("ACHIEVEMENT_EXTENDEDHELP"),
             requiredPermissions: ["ATTACH_FILES", "EMBED_LINKS"],
             name: 'achievement',
             runIn: ['text', 'dm'],
@@ -20,7 +20,7 @@ module.exports = class extends Command {
     }
 
     async run(msg, [textToSay]) {
-        if (!textToSay) { return msg.send('Usage: ``achievement [text]`` - Generates an achievement get message like Minecraft.\nExample: ``achievement Time To Strike`` - Generates a Minecraft achievement that says "Time To Strike".') }
+        if (!textToSay) throw msg.language.get("ACHIEVEMENT_ERROR");
         
         const canvas = createCanvas(420, 64);
         const ctx = canvas.getContext('2d');

@@ -6,8 +6,8 @@ const Cowsay                 = require('cowsay');
 module.exports = class extends Command {
     constructor(...args) {
         super(...args, {
-            description: 'Makes a cow say something.',
-            extendedHelp: '+cowsay Have you moooed today? :: Makes an ASCII cow say "Have you moooed today?".',
+            description: language => language.get("COWSAY_DESCRIPTION"),
+            extendedHelp: language => language.get("COWSAY_EXTENDEDHELP"),
             name: 'cowsay',
             runIn: ['text', 'dm'],
             usage: '[textToSay:string]'
@@ -15,7 +15,7 @@ module.exports = class extends Command {
     }
 
     async run(msg, [textToSay]) {
-        if (!textToSay) { return msg.send('Usage: ``cowsay [text]`` - Makes a cow say something.\nExample: ``cowsay Have you moooed today?`` - Makes the cow say "Have you moooed today?".') }
+        if (!textToSay) throw msg.language.get("COWSAY_ERROR");
         return msg.sendMessage(`\`\`\`${Cowsay.say({text : textToSay}) }\`\`\``);
     }
 }

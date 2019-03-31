@@ -5,8 +5,8 @@ const { Command }            = require('klasa');
 module.exports = class extends Command {
     constructor(...args) {
         super(...args, {
-            description: 'Reverses whatever text you input.',
-            extendedHelp: '+reverse hello world :: reverses the text "hello world".',
+            description: language => language.get("REVERSE_DESCRIPTION"),
+            extendedHelp: language => language.get("REVERSE_EXTENDEDHELP"),
             name: 'reverse',
             runIn: ['text', 'dm'],
             usage: '[textToRevert:string]'
@@ -20,7 +20,7 @@ module.exports = class extends Command {
             }, "");
         }
 
-        if (!textToRevert) { return msg.send('Usage: ``revert [text]`` - Reverts any text you input.\nExample: ``revert Hello world`` - Prints "dlrow olleH", or "Hello world" backwards.') }
+        if (!textToRevert) throw msg.language.get("REVERSE_ERROR");
 
         return msg.sendMessage(reverseString(`${textToRevert}`));
     }

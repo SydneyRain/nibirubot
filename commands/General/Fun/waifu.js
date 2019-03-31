@@ -5,8 +5,8 @@ const { Command }            = require('klasa');
 module.exports = class extends Command {
     constructor(...args) {
         super(...args, {
-            description: 'Prints a randomly generated waifu from www.thiswaifudoesnotexist.net.',
-            extendedHelp: '+waifu :: Prints a random waifu.',
+            description: language => language.get("WAIFU_DESCRIPTION"),
+            extendedHelp: language => language.get("WAIFU_EXTENDEDHELP"),
             name: 'waifu',
             runIn: ['text', 'dm'],
         });

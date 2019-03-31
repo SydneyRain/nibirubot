@@ -8,8 +8,8 @@ module.exports = class extends Command {
     constructor(...args) {
         super(...args, {
             aliases: ['rc'],
-            description: 'Generates a random hex color.',
-            extendedHelp: '+randomcolor :: Prints a random hex color."',
+            description: language => language.get("RANDOMCOLOR_DESCRIPTION"),
+            extendedHelp: language => language.get("RANDOMCOLOR_EXTENDEDHELP"),
             name: 'randomcolor',
             runIn: ['text', 'dm'],
         });
