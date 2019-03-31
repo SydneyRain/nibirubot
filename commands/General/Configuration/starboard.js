@@ -21,8 +21,9 @@ module.exports = class extends Command {
         let channel;
         if (msg.mentions.channels.size) { channel = msg.mentions.channels.first(); }
         else { return msg.send('Usage: ``starboard enable [channel]`` - Enables a Starboard channel. For more information on the Starboard see: https://nibiru.dev/commands/starboard/\nExample: ``starboard``'); }
-        await msg.guild.settings.update([["starboard.enabled", true], ["starboard.channel", channel.id]], msg.guild);
-        return msg.send(`${msg.language.get("STARBOARD_ENABLED_SUCCESS")}${channel.name}!`);
+        await msg.guild.settings.update([["starboard.enabled", true], ["starboard.channel", channel.id]], msg.guild).then(() => {
+            msg.send(`${msg.language.get("STARBOARD_ENABLED_SUCCESS")}${channel.name}!`);
+        });
     }
     
     async disable(msg) {

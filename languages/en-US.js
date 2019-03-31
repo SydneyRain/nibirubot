@@ -25,6 +25,8 @@ module.exports = class extends Language {
             //Descriptions
             ACHIEVEMENT_DESCRIPTION: 'Generates an "Achievement Get" message, like Minecraft.',
             ACHIEVEMENT_EXTENDEDHELP: '+achievement Time To Strike`` - Generates a Minecraft achievement that says "Time To Strike".',
+            AUTOROLE_DESCRIPTION: 'Automatically adds a role to a user when they join the server.',
+            AUTOROLE_EXTENDEDHELP: '+autorole enable Guests - Enables autorole, gives any new user who joins the server the "Guests" role (if the role exists and I have proper permissions).\n+autorole disable - Disables autorole, will not give any new users who join a role if it was set.\n+autorole view - View the autorole details.',
             COINFLIP_DESCRIPTION: 'Flips a coin.',
             COINFLIP_EXTENDEDHELP: '+coinflip :: Flips a coin.',
             COOKIE_DESCRIPTION: 'Gives somebody a cookie! :cookie:',
@@ -44,11 +46,17 @@ module.exports = class extends Language {
             WAIFU_DESCRIPTION: 'Prints a randomly generated waifu from www.thiswaifudoesnotexist.net.',
             WAIFU_EXTENDEDHELP: '+waifu :: Prints a random waifu.',
 
+            //Autorole
+            AUTOROLE_ENABLED_ERROR: 'Usage: ``autorole enable [role name]`` - Enables autorole. Users will automatically get this role after joining the server.\nExample: ``autorole enable Guests`` - Will give everyone who joins a role called "Guests", if it exists.',
+            AUTOROLE_ENABLED_SUCCESS: 'Autorole for this server has been enabled. Role set to: ',
+            AUTOROLE_DISABLED_ERROR: ':no_entry: Autorole has already been disabled!\nTo enable it, type ``+autorole enable [role name]``',
+            AUTOROLE_DISABLED_SUCCESS: 'Autorole for this server has been disabled.',
+
             //Starboard
             STARBOARD_ENABLED_SUCCESS: 'Successfully enabled the Starboard in #',
             STARBOARD_ENABLED_ERROR: ':no_entry: The Starboard has already been enabled!\nTo disable it, type ``+starboard disable``',
             STARBOARD_DISABLED_SUCCESS: 'Successfully disabled the Starboard.',
-            STARBOARD_DISABLED_ERROR: ':no_entry: The Starboard has already been disabled!\nTo enable it, type ``+starboard enable``',
+            STARBOARD_DISABLED_ERROR: ':no_entry: The Starboard has already been disabled!\nTo enable it, type ``+starboard enable [channel name]``',
             STARBOARD_LIMIT_ERROR: 'Usage: ``starboard limit [number]`` - Sets how many stars a message must have before being added onto the Starboard.\nExample: ``starboard limit 5`` - Will set the amount to 5.',
             STARBOARD_LIMIT_SUCCESS: 'Starboard limit has been set to ',
             
