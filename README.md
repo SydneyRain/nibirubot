@@ -6,6 +6,7 @@ Now in Klasa!
 
 Current features:
 
+* Auto Role
 * Database (PostgreSQL)
 * Starboard
 * Most commands from NibiruBot II
