@@ -16,3 +16,5 @@ module.exports.defaultGuildSchema = Client.defaultGuildSchema
         .add("enabled", "boolean", { default: false })
     )
         
+    //Misc
+    .add("currencysymbol", "string", { default: "N$"});

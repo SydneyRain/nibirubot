@@ -16,7 +16,7 @@ module.exports = class extends Command {
         });
     }
 
-    async enable(msg, [role]) {
+    async enable(msg, [...role]) {
         if(!role) throw msg.language.get("AUTOROLE_ENABLED_ERROR");
         await msg.guild.settings.update([["autorole.enabled", true], ["autorole.rolename", role]], msg.guild).then(() => {
             msg.send(`${msg.language.get("AUTOROLE_ENABLED_SUCCESS")} ${role}`);

@@ -11,6 +11,7 @@ module.exports = class extends SQLProvider {
 		super(...args);
 		this.qb = new QueryBuilder({
 			boolean: 'BOOL',
+			bigint: ({ max }) => max >= 2 ** 32 ? 'INTEGER' : 'BIGINT',
 			integer: ({ max }) => max >= 2 ** 32 ? 'BIGINT' : 'INTEGER',
 			float: 'DOUBLE PRECISION',
 			uuid: 'UUID',
