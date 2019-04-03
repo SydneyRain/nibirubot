@@ -23,7 +23,10 @@ module.exports = class extends Language {
             COWSAY_ERROR: 'Usage: ``cowsay [text]`` - Makes a cow say something.\nExample: ``cowsay Have you moooed today?`` - Makes the cow say "Have you moooed today?".',
             //Reverse
             REVERSE_ERROR: 'Usage: ``revert [text]`` - Reverts any text you input.\nExample: ``revert Hello world`` - Prints "dlrow olleH", or "Hello world" backwards.',
-
+            //Set Currency
+            SETCURRENCY_SET_ERROR: 'Usage: ``setcurrency [symbol]`` - Changes the currency symbol for this server.\nExample: ``setcurrency $`` - Sets the currency symbol to a dollar.\n``setcurrency :potato:`` - Sets the currency symbol to an emoji, in this example a potato',
+            //Slots
+            SLOTS_ERROR: 'Usage: ``slots [amount]`` - Plays a game of slots, if you get a match up (3 emojis matching up), you can potentially win up to 300x the amount you bet!\nExample: ``slots 50`` - Bets 50 NibiruBucks on slots.',
             //Descriptions
             ACHIEVEMENT_DESCRIPTION: 'Generates an "Achievement Get" message, like Minecraft.',
             ACHIEVEMENT_EXTENDEDHELP: '+achievement Time To Strike`` :: Generates a Minecraft achievement that says "Time To Strike".',
@@ -43,12 +46,18 @@ module.exports = class extends Language {
             DEPOSIT_EXTENDEDHELP: '+deposit [amount] :: Deposits however much you specify into your bank account.',
             EIGHTBALL_DESCRIPTION: 'Ask the magic 8-Ball about your future.',
             EIGHTBALL_EXTENDEDHELP: '+8ball Will I find love? :: Asks the 8-ball "Will I find love?"',
+            GIVE_DESCRIPTION: 'Gives another member NibiruBucks.',
+            GIVE_EXTENDEDHELP: '+give @[user] [amount] :: Gives the specified user however much money you specify. For example, +give @Nibiru 500 will give Nibiru 500 NibiruBucks.',
             INSULT_DESCRIPTION: 'Insult somebody you don\'t like.',
             INSULT_EXTENDEDHELP: '+insult @[user] :: Will insult a user.',
             RANDOMCOLOR_DESCRIPTION: 'Generates a random hex color.',
             RANDOMCOLOR_EXTENDEDHELP: '+randomcolor :: Prints a random hex color."',
             REVERSE_DESCRIPTION: 'Reverses whatever text you input.',
             REVERSE_EXTENDEDHELP: '+reverse hello world :: reverses the text "hello world".',
+            SETCURRENCY_DESCRIPTION: 'Sets the currency symbol for this server.',
+            SETCURRENCY_EXTENDEDHELP: '+setcurrency $ :: Sets the currency symbol to a dollar.\n+setcurrency :potato: :: Sets the currency symbol to an emoji, in this example a potato',
+            SLOTS_DESCRIPTION: 'Plays a game of slots! (Requires some money)',
+            SLOTS_EXTENDEDHELP: '+slots 15 :: Bets 15 NibriuBucks that you will match up all three slots. If you match up all 3 you can win big. Match 3 Lucky 7\'s to potentially win up to 300x the amount you bet!',
             STARBOARD_DESCRIPTION: 'Manages the starboard configuration for this server.',
             STARBOARD_EXTENDEDHELP: '+starboard enable #starboard :: Enables the Starboard, and sets the Starboard channel to "#general".\n+starboard disable :: Disables the starboard.\n+starboard limit 5 :: Sets the starboard limit to 5 (how many stars a message will need to get before it gets added to the Starboard).',
             WAIFU_DESCRIPTION: 'Prints a randomly generated waifu from www.thiswaifudoesnotexist.net.',
@@ -75,6 +84,9 @@ module.exports = class extends Language {
             STARBOARD_DISABLED_ERROR: ':no_entry: The Starboard has already been disabled!\nTo enable it, type ``+starboard enable [channel name]``',
             STARBOARD_LIMIT_ERROR: 'Usage: ``starboard limit [number]`` :: Sets how many stars a message must have before being added onto the Starboard.\nExample: ``starboard limit 5`` :: Will set the amount to 5.',
             STARBOARD_LIMIT_SUCCESS: 'Starboard limit has been set to ',
+
+            //Slots
+            SLOTS_ERROR_NO_MONEY: 'You do not have that much NibiruBucks to bet!\nTip: Type ``+daily`` each day to get 1200 bucks!',
             
             //Misc
             ERROR_ALREADY_REDEEMED: 'You have already redeemed your daily amount! You may redeem again in: ',
