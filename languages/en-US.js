@@ -39,6 +39,8 @@ module.exports = class extends Language {
             COWSAY_EXTENDEDHELP: '+cowsay Have you moooed today? :: Makes an ASCII cow say "Have you moooed today?".',
             DAILY_DESCRIPTION: 'Redeems your daily 1200 NibiruBucks™!',
             DAILY_EXTENDEDHELP: '+daily :: Redeems your daily 1200 NibiruBucks.\n+daily @[user] :: Redeems your daily 1200 NibiruBucks towards another user.',
+            DEPOSIT_DESCRIPTION: 'Deposit NibiruBucks into your bank account.',
+            DEPOSIT_EXTENDEDHELP: '+deposit [amount] :: Deposits however much you specify into your bank account.',
             EIGHTBALL_DESCRIPTION: 'Ask the magic 8-Ball about your future.',
             EIGHTBALL_EXTENDEDHELP: '+8ball Will I find love? :: Asks the 8-ball "Will I find love?"',
             INSULT_DESCRIPTION: 'Insult somebody you don\'t like.',
@@ -51,12 +53,20 @@ module.exports = class extends Language {
             STARBOARD_EXTENDEDHELP: '+starboard enable #starboard :: Enables the Starboard, and sets the Starboard channel to "#general".\n+starboard disable :: Disables the starboard.\n+starboard limit 5 :: Sets the starboard limit to 5 (how many stars a message will need to get before it gets added to the Starboard).',
             WAIFU_DESCRIPTION: 'Prints a randomly generated waifu from www.thiswaifudoesnotexist.net.',
             WAIFU_EXTENDEDHELP: '+waifu :: Prints a random waifu.',
+            WITHDRAW_DESCRIPTION: 'Withdraws NibiruBucks from your bank account.',
+            WITHDRAW_EXTENDEDHELP: '+withdraw [amount] :: Withdraws however much you specify from your bank account.',
 
             //Autorole
             AUTOROLE_ENABLED_ERROR: 'Usage: ``autorole enable [role name]`` :: Enables autorole. Users will automatically get this role after joining the server.\nExample: ``autorole enable Guests`` :: Will give everyone who joins a role called "Guests", if it exists.',
             AUTOROLE_ENABLED_SUCCESS: 'Autorole for this server has been enabled. Role set to: ',
             AUTOROLE_DISABLED_ERROR: ':no_entry: Autorole has already been disabled!\nTo enable it, type ``+autorole enable [role name]``',
             AUTOROLE_DISABLED_SUCCESS: 'Autorole for this server has been disabled.',
+
+            //Bank
+            ERROR_INVALID_AMOUNT_DEPOSIT: 'You specified an invalid amount! You must deposit at least 1 NibiruBuck!',
+            ERROR_INVALID_MONEY_DEPOSIT: 'You do not have that much NibiruBucks to deposit!',
+            ERROR_INVALID_AMOUNT_WITHDRAW: 'You specified an invalid amount! You must withdraw at least 1 NibiruBuck!',
+            ERROR_INVALID_MONEY_WITHDRAW: 'You do not have that much NibiruBucks to withdraw!',
 
             //Starboard
             STARBOARD_ENABLED_SUCCESS: 'Successfully enabled the Starboard in #',
@@ -70,8 +80,7 @@ module.exports = class extends Language {
             ERROR_ALREADY_REDEEMED: 'You have already redeemed your daily amount! You may redeem again in: ',
             NSFW_ONLY: ':no_entry: This command may only be used in NSFW channels.',
 
-            DEFAULT_LANGUAGE: 'Default Language',
-            
+            DEFAULT_LANGUAGE: 'Default Language'
 		};
 	}
 
