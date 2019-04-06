@@ -5,6 +5,7 @@ module.exports = class extends Command {
 
 	constructor(...args) {
 		super(...args, {
+			enabled: false,
 			aliases: ['ev'],
 			permissionLevel: 10,
 			guarded: true,

@@ -12,7 +12,8 @@ module.exports = class extends Command {
             usage: '<enable|disable|view> [role:rolename]',
             subcommands: true,
             usageDelim: " ",
-            permissionLevel: 6
+            permissionLevel: 6,
+            requiredPermissions: ["MANAGE_GUILD"],
         });
     }
 

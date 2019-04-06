@@ -7,8 +7,8 @@ module.exports = class extends Command {
 
 	constructor(...args) {
 		super(...args, {
-			description: 'Pings the bot and Discord API, or ping a website.',
-			extendedHelp: '+ping :: Pings the bot and Discord\'s API.\n+ping www.google.com :: Pings a website (in this example, it pings google.com). You can ping either a website, or an IP address.',
+            description: language => language.get("PING_DESCRIPTION"),
+            extendedHelp: language => language.get("PING_EXTENDEDHELP"),
             name: 'ping',
             runIn: ['text', 'dm'],
             usage: '[siteToPing:string]'
