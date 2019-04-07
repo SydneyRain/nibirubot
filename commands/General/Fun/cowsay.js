@@ -16,6 +16,6 @@ module.exports = class extends Command {
 
     async run(msg, [textToSay]) {
         if (!textToSay) throw msg.language.get("COWSAY_ERROR");
-        return msg.sendMessage(`\`\`\`${Cowsay.say({text : textToSay}) }\`\`\``);
+        return msg.sendCode('', Cowsay.say({text : textToSay}));
     }
 }
