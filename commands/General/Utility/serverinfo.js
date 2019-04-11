@@ -15,7 +15,7 @@ module.exports = class extends Command {
         });
     }
 
-    async run(msg,) {
+    async run(msg) {
         const region = {
             "brazil": "🇧🇷 Brazil",
             "eu-central": "🇪🇺 Central Europe",
