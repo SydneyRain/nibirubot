@@ -9,7 +9,7 @@ module.exports = class extends Command {
             extendedHelp: language => language.get("AUTOROLE_EXTENDEDHELP"),
             name: 'autorole',
             runIn: ['text'],
-            usage: '<add|enable|disable> [role:rolename]',
+            usage: '<add|disable|enable|remove> [role:rolename]',
             subcommands: true,
             usageDelim: " ",
             permissionLevel: 6,
@@ -36,5 +36,13 @@ module.exports = class extends Command {
         await msg.guild.settings.update("autorole.enabled", false, msg.guild).then(() => {
             msg.send(msg.language.get("AUTOROLE_DISABLED_SUCCESS"));
         });
+    }
+
+    async remove(msg, [...role]) {
+        if (msg.guild.settings.get("autorole.roles").indexOf(role.id)) {
+            return msg.guild.settings.update("autorole.roles", role, msg.guild).then(() => {
+                msg.send(`${msg.language.get("AUTOROLE_REMOVED_SUCCESS")}`);
+            });
+        }
     }
 }
