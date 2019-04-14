@@ -9,7 +9,7 @@ module.exports = class extends Command {
             extendedHelp: language => language.get("AUTOROLE_EXTENDEDHELP"),
             name: 'autorole',
             runIn: ['text'],
-            usage: '<enable|disable|view> [role:rolename]',
+            usage: '<add|enable|disable> [role:rolename]',
             subcommands: true,
             usageDelim: " ",
             permissionLevel: 6,
@@ -17,10 +17,17 @@ module.exports = class extends Command {
         });
     }
 
-    async enable(msg, [...role]) {
-        if(!role) throw msg.language.get("AUTOROLE_ENABLED_ERROR");
-        await msg.guild.settings.update([["autorole.enabled", true], ["autorole.rolename", role]], msg.guild).then(() => {
-            msg.send(`${msg.language.get("AUTOROLE_ENABLED_SUCCESS")} ${role}`);
+    async add(msg, [...role]) {
+        if (!role) throw msg.language.get("AUTOROLE_NO_ROLE_SPECIFIED");
+        await msg.guild.settings.update("autorole.roles", role, msg.guild).then(() => {
+            msg.send(`${msg.language.get("AUTOROLE_SUCCESSFULLY_ADDED")}: ${role}`);
+        });
+    }
+
+    async enable(msg) {
+        if(msg.guild.settings.autorole.enabled) throw msg.language.get("AUTOROLE_ALREADY_ENABLED")
+        await msg.guild.settings.update("autorole.enabled", true, msg.guild).then(() => {
+            msg.send(`${msg.language.get("AUTOROLE_ENABLED_SUCCESS")}`);
         });
     }
     
@@ -29,9 +36,5 @@ module.exports = class extends Command {
         await msg.guild.settings.update("autorole.enabled", false, msg.guild).then(() => {
             msg.send(msg.language.get("AUTOROLE_DISABLED_SUCCESS"));
         });
-    }
-
-    async view(msg) {
-        msg.send(`:desktop: Autorole Settings for ${msg.guild.name}:\n**Enabled**: ${msg.guild.settings.autorole.enabled || "false"}\n**Name:** ${msg.guild.roles.get(msg.guild.settings.autorole.rolename).toString() || "None"}\n**ID:** ${msg.guild.settings.autorole.rolename || "None"}\n`)
     }
 }

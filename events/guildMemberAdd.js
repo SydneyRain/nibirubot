@@ -12,6 +12,6 @@ module.exports = class MessageReactionAddEvent extends Event {
     autoroleadd(member) {
         if (!member.guild.settings.autorole.enabled) return;
         if (!member.guild.me.permissions.has("MANAGE_ROLES")) return;
-        return member.roles.add(member.guild.settings.autorole.rolename, "Adding user to role (Autorole)").catch(() => null);
+        return member.roles.add(member.guild.settings.autorole.roles, "Adding user to role (Autorole)").catch(() => null);
     }
 }

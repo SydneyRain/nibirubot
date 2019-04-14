@@ -6,13 +6,13 @@ module.exports.defaultGuildSchema = Client.defaultGuildSchema
     //Auto Role
     .add("autorole", (folder) => folder
         .add("enabled", "boolean", { default: false })
-        .add("roleName", "role")
+        .add("roles", "role", { array: true })
     )
 
     //Starboard
     .add("starboard", (folder) => folder 
         .add("channel", "channel")
-        .add("limit", "integer", { default: 3} )
+        .add("limit", "integer", { default: 3 } )
         .add("enabled", "boolean", { default: false } )
     )
     

@@ -98,10 +98,9 @@ module.exports = class extends Language {
             WITHDRAW_EXTENDEDHELP: '+withdraw [amount] :: Withdraws however much you specify from your bank account.',
 
             //Autorole
-            AUTOROLE_ENABLED_ERROR: 'Usage: ``autorole enable [role name]`` :: Enables autorole. Users will automatically get this role after joining the server.\nExample: ``autorole enable Guests`` :: Will give everyone who joins a role called "Guests", if it exists.',
-            AUTOROLE_ENABLED_SUCCESS: 'Autorole for this server has been enabled. Role set to: ',
-            AUTOROLE_DISABLED_ERROR: ':no_entry: Autorole has already been disabled!\nTo enable it, type ``+autorole enable [role name]``',
-            AUTOROLE_DISABLED_SUCCESS: 'Autorole for this server has been disabled.',
+            AUTOROLE_ENABLED_SUCCESS: 'Autorole for this server has been enabled. \nTo set a role, type ``+autorole add [role name]``. To remove a role, type ``+autorole remove [role name]``',
+            AUTOROLE_DISABLED_ERROR: ':no_entry: Autorole has already been disabled!\nTo enable it, type ``+autorole enable``',
+            AUTOROLE_DISABLED_SUCCESS: 'Autorole for this server has been disabled.\nTo enable it again, type ``+autorole enable``',
 
             //Bank
             ERROR_INVALID_AMOUNT_DEPOSIT: 'You specified an invalid amount! You must deposit at least 1 NibiruBuck!',
