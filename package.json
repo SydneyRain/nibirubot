@@ -25,6 +25,7 @@
     "insult": "0.0.3",
     "js-yaml": "^3.13.0",
     "klasa": "github:dirigeants/klasa",
+    "klasa-dashboard-hooks": "git+https://github.com/dirigeants/klasa-dashboard-hooks.git",
     "klasa-member-gateway": "git+https://github.com/dirigeants/klasa-member-gateway.git",
     "moment": "^2.24.0",
     "pg": "^7.9.0",
