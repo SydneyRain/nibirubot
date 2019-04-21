@@ -20,7 +20,7 @@ module.exports = class extends Command {
         if (money > msg.author.settings.bankmoney) return msg.send(msg.language.get("ERROR_INVALID_MONEY_WITHDRAW"));
         
         await msg.author.settings.update([["money", parseInt(msg.author.settings.money) + money], ["bankmoney", parseInt(msg.author.settings.bankmoney) - money]]).then(() => {
-            return msg.sendMessage(`Withdrew ${msg.guild.settings.currencysymbol}${money} from your account.`)
+            return msg.sendMessage(`Withdrew ${msg.guild.settings.currencySymbol}${money} from your account.`)
         });
     }
 }

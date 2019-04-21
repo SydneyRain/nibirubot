@@ -18,7 +18,7 @@ module.exports = class extends Command {
     async run(msg, [currency]) {
         if (!currency) throw msg.language.get("SETCURRENCY_SET_ERROR");
 
-        await msg.guild.settings.update("currencysymbol", currency).then(() => {
+        await msg.guild.settings.update("currencySymbol", currency).then(() => {
             msg.send(`Successfully set currency to ${currency}`);
         });
     }

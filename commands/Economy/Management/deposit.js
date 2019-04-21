@@ -20,7 +20,7 @@ module.exports = class extends Command {
         if (msg.author.settings.money < money) return msg.send(msg.language.get("ERROR_INVALID_MONEY_DEPOSIT"));
         
         await msg.author.settings.update([["money", parseInt(msg.author.settings.money) - money], ["bankmoney", parseInt(msg.author.settings.bankmoney) + money]]).then(() => {
-            return msg.sendMessage(`Deposited ${msg.guild.settings.currencysymbol}${money} into your account.`)
+            return msg.sendMessage(`Deposited ${msg.guild.settings.currencySymbol}${money} into your account.`)
         });
     }
 }

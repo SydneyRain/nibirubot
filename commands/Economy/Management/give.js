@@ -25,6 +25,6 @@ module.exports = class extends Command {
         await msg.author.settings.update("money", parseInt(msg.author.settings.money) - money);
         await user.settings.update("money", parseInt(user.settings.money) + money);
 
-        return msg.sendMessage(`Successfully transferred ${msg.guild.settings.currencysymbol}${money} to ${user}!`)
+        return msg.sendMessage(`Successfully transferred ${msg.guild.settings.currencySymbol}${money} to ${user}!`)
     }
 }
