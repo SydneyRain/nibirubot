@@ -1,7 +1,5 @@
 const { Client } = require("klasa");
 
-Client.use(require("klasa-member-gateway"));
-
 module.exports.defaultGuildSchema = Client.defaultGuildSchema
     //Auto Role
     .add("autorole", (folder) => folder
