@@ -39,6 +39,7 @@ module.exports = class extends Command {
     }
 
     async remove(msg, [...role]) {
+        if (!role) throw msg.language.get("AUTOROLE_NO_ROLE_SPECIFIED");
         if (msg.guild.settings.get("autorole.roles").indexOf(role.id)) {
             return msg.guild.settings.update("autorole.roles", role, msg.guild).then(() => {
                 msg.send(`${msg.language.get("AUTOROLE_REMOVED_SUCCESS")}`);
