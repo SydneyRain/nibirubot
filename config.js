@@ -42,6 +42,11 @@ exports.config = {
     /* Providers */
     providers: {
         default: "postgresql"
+    },
+    /* Dashboard Hooks */
+    dashboardHooks: {
+        apiPrefix: "/", 
+        port: "4000"
     }
 }
 
