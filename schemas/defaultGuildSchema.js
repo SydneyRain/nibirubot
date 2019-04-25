@@ -22,7 +22,8 @@ module.exports.defaultGuildSchema = Client.defaultGuildSchema
         .add("enabled", "boolean", { default: false })
         .add("logGuildMemberAdd", "boolean", { default: true })
         .add("logGuildMemberRemove", "boolean", { default: true })
-        .add("logMessageUpdate", "boolean", { default: false })
+        .add("logMessageUpdate", "boolean", { default: true })
+        .add("logMessageDelete", "boolean", { default: true })
         .add("logMessageReactionAdd", "boolean", { default: false })
     )
         
