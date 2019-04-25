@@ -23,9 +23,11 @@ module.exports = class MessageReactionAddEvent extends Event {
         if(!member.guild.settings.logs.logGuildMemberAdd) return;
         const embed = new MessageEmbed()
             .setAuthor(`${member.user.tag}`, member.user.avatarURL())
+            .setThumbnail(member.user.avatarURL())
             .setColor("#ffcc00")
             .setTitle("New user join")
-            .setDescription(`A new user joined the server.\n\n**• Name:** ${member.user.tag} \n**• Joined Discord:** ${Moment(member.user.createdAt).format('lll')} \n **• Joined Server:** ${Moment(member.user.joinedAt).format('lll')}** \n • ID:** ${member.user.id}`);
+            .setDescription(`A new user has joined ${member.guild.name}.\n\n**• Name:** ${member.user.tag} \n**• Joined Discord:** ${Moment(member.user.createdAt).format('lll')} \n **• Joined Server:** ${Moment(member.user.joinedAt).format('lll')}** \n • ID:** ${member.user.id}`)
+            .setFooter(`Server is now at ${member.guild.memberCount} members!`);
         
         const logchannel = await this.client.channels.get(member.guild.settings.logs.channel);
         return logchannel.send(embed);
