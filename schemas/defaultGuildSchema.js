@@ -20,7 +20,7 @@ module.exports.defaultGuildSchema = Client.defaultGuildSchema
     .add("logs", (folder) => folder 
         .add("channel", "channel")
         .add("enabled", "boolean", { default: false })
-        .add("logGuildMemberAdd", "boolean", { default: false })
+        .add("logGuildMemberAdd", "boolean", { default: true })
         .add("logMessageUpdate", "boolean", { default: false })
         .add("logMessageReactionAdd", "boolean", { default: false })
     )

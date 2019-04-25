@@ -1,5 +1,6 @@
 const { Event } = require('klasa');
 const { MessageEmbed } = require('discord.js');
+const Moment = require('moment');
 
 module.exports = class MessageReactionAddEvent extends Event {
     constructor(...args) {
@@ -18,15 +19,13 @@ module.exports = class MessageReactionAddEvent extends Event {
     }
     
     async editLog(member) {
-        let userCreatedDate = member.user.createdAt.toString().split(' ');
-
         if(!member.guild.settings.logs.enabled) return;
         if(!member.guild.settings.logs.logGuildMemberAdd) return;
         const embed = new MessageEmbed()
             .setAuthor(`${member.user.tag}`, member.user.avatarURL())
             .setColor("#ffcc00")
             .setTitle("New user join")
-            .setDescription(`A new user joined the server.\n\n**• Name:** ${member.user.tag} \n**• Account Created:** ${userCreatedDate[1]} ${userCreatedDate[2]}, ${userCreatedDate[3]} \n**• ID:** ${member.user.id}`);
+            .setDescription(`A new user joined the server.\n\n**• Name:** ${member.user.tag} \n**• Joined Discord:** ${Moment(member.user.createdAt).format('lll')} \n **• Joined Server:** ${Moment(member.user.joinedAt).format('lll')}** \n • ID:** ${member.user.id}`);
         
         const logchannel = await this.client.channels.get(member.guild.settings.logs.channel);
         return logchannel.send(embed);
