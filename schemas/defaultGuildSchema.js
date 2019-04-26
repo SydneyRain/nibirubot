@@ -21,6 +21,7 @@ module.exports.defaultGuildSchema = Client.defaultGuildSchema
         .add("channel", "channel")
         .add("enabled", "boolean", { default: false })
         .add("logChannelCreate", "boolean", { default: false })
+        .add("logChannelDelete", "boolean", { default: false })
         .add("logGuildMemberAdd", "boolean", { default: true })
         .add("logGuildMemberRemove", "boolean", { default: true })
         .add("logMessageUpdate", "boolean", { default: true })

@@ -1,7 +1,7 @@
 const { Event } = require('klasa');
 const { MessageEmbed } = require('discord.js');
 
-module.exports = class ChannelCreateEvent extends Event {
+module.exports = class ChannelDeleteEvent extends Event {
     constructor(...args) {
         super(...args, {enabled: true});
     }
@@ -12,11 +12,11 @@ module.exports = class ChannelCreateEvent extends Event {
     
     async editLog(channel) {
         if(!channel.guild.settings.logs.enabled) return;
-        if(!channel.guild.settings.logs.logChannelCreate) return;
+        if(!channel.guild.settings.logs.logChannelDelete) return;
         const embed = new MessageEmbed()
             .setColor("#ffcc00")
-            .setTitle("New channel created")
-            .setDescription(`A new channel has been created.\n\n**• Name:** #${channel.name} \n**• Type:** ${channel.type} \n **• ID:** ${channel.id}`)
+            .setTitle("Channel deleted")
+            .setDescription(`A channel has been deleted.\n\n**• Name:** #${channel.name} \n**• Type:** ${channel.type} \n **• ID:** ${channel.id}`)
         
         const logchannel = await this.client.channels.get(channel.guild.settings.logs.channel);
         return logchannel.send(embed);
