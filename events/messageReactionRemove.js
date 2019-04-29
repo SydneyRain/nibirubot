@@ -14,7 +14,7 @@ module.exports = class MessageReactionRemoveEvent extends Event {
     async editLog(messageReaction) {
         const msg = messageReaction.message;
         if(!msg.guild.settings.logs.enabled) return;
-        if(!msg.guild.settings.logs.logMessageReactionAdd) return;
+        if(!msg.guild.settings.logs.logMessageReactionRemove) return;
 
         const embed = new MessageEmbed()
             .setAuthor(`${msg.author.tag}`, msg.author.avatarURL())

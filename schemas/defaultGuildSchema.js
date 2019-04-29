@@ -20,6 +20,8 @@ module.exports.defaultGuildSchema = Client.defaultGuildSchema
     .add("logs", (folder) => folder 
         .add("channel", "channel")
         .add("enabled", "boolean", { default: false })
+        .add("logEmojiCreate", "boolean", { default: false })
+        .add("logEmojiDelete", "boolean", { default: false })
         .add("logChannelCreate", "boolean", { default: false })
         .add("logChannelDelete", "boolean", { default: false })
         .add("logChannelUpdate", "boolean", { default: false })
@@ -28,6 +30,8 @@ module.exports.defaultGuildSchema = Client.defaultGuildSchema
         .add("logMessageUpdate", "boolean", { default: true })
         .add("logMessageDelete", "boolean", { default: true })
         .add("logMessageReactionAdd", "boolean", { default: false })
+        .add("logMessageReactionRemove", "boolean", { default: false })
+        .add("logUserUpdate", "boolean", { default: false })
     )
         
     //Misc
