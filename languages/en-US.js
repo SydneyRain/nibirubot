@@ -80,6 +80,8 @@ module.exports = class extends Language {
             RANDOMCOLOR_EXTENDEDHELP: '+randomcolor :: Prints a random hex color."',
             REVERSE_DESCRIPTION: 'Reverses whatever text you input.',
             REVERSE_EXTENDEDHELP: '+reverse [text] :: Reverses whatever text you input.',
+            RUSSIANROULETTE_DESCRIPTION: 'One in six chance of either getting 2000, 5000, 1 NibiruBucks, or being kicked from the server! (Must be enabled by the server owner).' ,
+            RUSSIANROULETTE_EXTENDEDHELP: '+russianroulette :: Plays the game. (if enabled)\n+russianroulette enable :: Enables playing Russian Roulette\n+russianroulette disable :: Disables playing Russian Roulette',
             SAY_DESCRIPTION: 'Makes me say anything. Anythinggg at all.',
             SAY_EXTENDEDHELP: '+say [text] :: Makes me say something..',
             SETCURRENCY_DESCRIPTION: 'Sets the currency symbol for this server.',
@@ -108,6 +110,13 @@ module.exports = class extends Language {
             ERROR_INVALID_AMOUNT_WITHDRAW: 'You specified an invalid amount! You must withdraw at least 1 NibiruBuck!',
             ERROR_INVALID_MONEY_WITHDRAW: 'You do not have that much NibiruBucks to withdraw!',
 
+            //Russian Roulette
+            RUSSIANROULETTE_DISABLED: 'Sorry, Russian Roulette is currently disabled on this server. Ask a moderator to enable it!',
+            RUSSIANROULETTE_ENABLED_ERROR: 'Russian Roulette has already been enabled!',
+            RUSSIANROULETTE_ENABLED_SUCCESS: 'Russian Roulette is now enabled for this server!',
+            RUSSIANROULETTE_DISABLED_ERROR: 'Russian Roulette has already been disabled!',
+            RUSSIANROULETTE_DISABLED_SUCCESS: 'Russian Roulette is now disabled for this server!',
+
             //Starboard
             STARBOARD_ENABLED_SUCCESS: 'Successfully enabled the Starboard in #',
             STARBOARD_ENABLED_ERROR: ':no_entry: The Starboard has already been enabled!\nTo disable it, type ``+starboard disable``',
@@ -124,6 +133,7 @@ module.exports = class extends Language {
             ERROR_CANT_BAN: ':no_entry: This user may not be banned.',
             ERROR_CANT_KICK: ':no_entry: This user may not be kicked.',
             NSFW_ONLY: ':no_entry: This command may only be used in NSFW channels.',
+            NO_PERMISSION_ADMINISTRATOR: ':no_entry: You do not have permission to do this! Requires permission: **ADMINISTRATOR**',
 
             DEFAULT_LANGUAGE: 'Default Language'
 		};

@@ -35,4 +35,5 @@ module.exports.defaultGuildSchema = Client.defaultGuildSchema
     )
         
     //Misc
-    .add("currencySymbol", "string", { default: "N$"});
+    .add("currencySymbol", "string", { default: "N$"})
+    .add("russianRouletteEnable", "boolean", { default: false });
