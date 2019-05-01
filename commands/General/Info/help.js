@@ -27,17 +27,8 @@ module.exports = class extends Command {
 			].join('\n');
 			return message.sendMessage(info, { code: 'asciidoc' });
 		}
-		const help = await this.buildHelp(message);
-		const categories = Object.keys(help);
-		const helpMessage = [];
-		for (let cat = 0; cat < categories.length; cat++) {
-			helpMessage.push(`**${categories[cat]} Commands**:`, '```asciidoc');
-			const subCategories = Object.keys(help[categories[cat]]);
-			for (let subCat = 0; subCat < subCategories.length; subCat++) helpMessage.push(`= ${subCategories[subCat]} =`, `${help[categories[cat]][subCategories[subCat]].join('\n')}\n`);
-			helpMessage.push('```', '\u200b');
-		}
 
-		return message.author.send(helpMessage, { split: { char: '\u200b' } })
+		return message.author.send(`View a list of commands here: https://nibiru.dev/commands`, { split: { char: '\u200b' } })
 			.then(() => { if (message.channel.type !== 'dm') message.sendLocale('COMMAND_HELP_DM'); })
 			.catch(() => { if (message.channel.type !== 'dm') message.sendLocale('COMMAND_HELP_NODM'); });
 	}
