@@ -34,11 +34,11 @@ module.exports = class extends Command {
         }
         if (randomNumber < .333) {
             if(!member.kickable) {
-                msg.send(`You point the gun to your head...\nYou pull the trigger...\n**BLAM!** 100 goats shoot out and beat you up!`);
+                msg.send(`You point the gun to your head...\nYou pull the trigger...\n**BLAM!** 100 goats shoot out and attack you!`);
                 return;
             }
-            msg.send(`You point the gun to your head...\nYou pull the trigger...\n**BLAM!** 2500 NibiruBucks shoot out!`);
-            await msg.author.settings.update("money", parseInt(msg.author.settings.money) + 2500);
+            msg.send(`You point the gun to your head...\nYou pull the trigger...\n**BLAM!** 10000 NibiruBucks shoot out!`);
+            await msg.author.settings.update("money", parseInt(msg.author.settings.money) + 10000);
             return;
         }
         if (randomNumber < .5) {
