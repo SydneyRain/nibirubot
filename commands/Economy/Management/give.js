@@ -27,7 +27,7 @@ module.exports = class extends Command {
             return msg.sendMessage(`Successfully transferred ${msg.guild.settings.currencySymbol}${money} to ${user}!`)
         }
         else {
-            return msg.send("Usage: +give (money) (user) - Gives money to another user.\nExample: +give @Nibiru 10 - Sends Nibiru 10 NibiruBucks.");
+            return msg.send("Usage: +give (money) (user) - Gives money to another user.\nExample: +give 10 @Nibiru - Sends Nibiru 10 NibiruBucks.");
         }
     }
 }
