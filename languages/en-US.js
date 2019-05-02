@@ -74,6 +74,8 @@ module.exports = class extends Language {
             INSULT_EXTENDEDHELP: '+insult @[user] :: Will insult a user.',
             KICK_DESCRIPTION: 'Kicks a user from the server.',
             KICK_EXTENDEDHELP: '+kick @[user] [reason] :: Kicks a user from the server. I will DM them a reason why they got kicked.',
+            LOGS_DESCRIPTION: 'Manages the server logs configuration.',
+            LOGS_EXTENDEDHELP: '+logs enable #logs :: Enables the logs, and sets the logs channel to "#logs".\n+logs disable :: Disables the logs.',
             PING_DESCRIPTION: 'Pings the bot and Discord API, or ping a website',
             PING_EXTENDEDHELP: '+ping :: Pings the bot and Discord\'s API.\n+ping [website] :: Pings a website. You can ping either a website, or an IP address.',
             RANDOMCOLOR_DESCRIPTION: 'Generates a random hex color.',
@@ -111,6 +113,12 @@ module.exports = class extends Language {
             ERROR_INVALID_MONEY_WITHDRAW: 'You do not have that much NibiruBucks to withdraw!',
             ERROR_INVALID_MONEY_GIVE: 'You do not have that much NibiruBucks to give!',
             ERROR_INVALID_AMOUNT_GIVE: 'You specified an invalid amount! You must give at least 1 NibiruBuck!',
+
+            //Logs
+            LOGS_ENABLED_SUCCESS: 'Successfully enabled the logs in #',
+            LOGS_ENABLED_ERROR: ':no_entry: The Logs have already been enabled! To disable them, type ``+logs disable``',
+            LOGS_DISABLED_SUCCESS: 'Successfully disabled the logs.',
+            LOGS_DISABLED_ERROR: ':no_entry: The Logs have already been disabled! To enable them, type ``+logs enable [channel name]``',
 
             //Russian Roulette
             RUSSIANROULETTE_DISABLED: 'Sorry, Russian Roulette is currently disabled on this server. Ask a moderator to enable it!',
