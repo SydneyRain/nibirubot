@@ -15,16 +15,19 @@ module.exports = class extends Command {
     }
 
     async run(msg, [money, user]) {
-
-        
         await msg.author.settings.sync(true);
 
-        if (money < 1) return msg.send(msg.language.get("ERROR_INVALID_AMOUNT_DEPOSIT"));
-        if (msg.author.settings.money < money) return msg.send(msg.language.get("ERROR_INVALID_MONEY_DEPOSIT"));
+        if (money < 1) return msg.send(msg.language.get("ERROR_INVALID_MONEY_GIVE"));
+        if (msg.author.settings.money < money) return msg.send(msg.language.get("ERROR_INVALID_MONEY_GIVE"));
 
-        await msg.author.settings.update("money", parseInt(msg.author.settings.money) - money);
-        await user.settings.update("money", parseInt(user.settings.money) + money);
+        if(money === parseInt(money)) {
+            await msg.author.settings.update("money", parseInt(msg.author.settings.money) - money);
+            await user.settings.update("money", parseInt(user.settings.money) + money);
 
-        return msg.sendMessage(`Successfully transferred ${msg.guild.settings.currencySymbol}${money} to ${user}!`)
+            return msg.sendMessage(`Successfully transferred ${msg.guild.settings.currencySymbol}${money} to ${user}!`)
+        }
+        else {
+            return msg.send("Usage: +give (money) (user) - Gives money to another user.\nExample: +give @Nibiru 10 - Sends Nibiru 10 NibiruBucks.");
+        }
     }
 }

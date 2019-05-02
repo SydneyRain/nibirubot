@@ -109,6 +109,8 @@ module.exports = class extends Language {
             ERROR_INVALID_MONEY_DEPOSIT: 'You do not have that much NibiruBucks to deposit!',
             ERROR_INVALID_AMOUNT_WITHDRAW: 'You specified an invalid amount! You must withdraw at least 1 NibiruBuck!',
             ERROR_INVALID_MONEY_WITHDRAW: 'You do not have that much NibiruBucks to withdraw!',
+            ERROR_INVALID_MONEY_GIVE: 'You do not have that much NibiruBucks to give!',
+            ERROR_INVALID_AMOUNT_GIVE: 'You specified an invalid amount! You must give at least 1 NibiruBuck!',
 
             //Russian Roulette
             RUSSIANROULETTE_DISABLED: 'Sorry, Russian Roulette is currently disabled on this server. Ask a moderator to enable it!',
