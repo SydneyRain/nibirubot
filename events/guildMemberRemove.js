@@ -19,7 +19,7 @@ module.exports = class MessageReactionRemoveEvent extends Event {
             .setThumbnail(member.user.avatarURL())
             .setColor("#ffcc00")
             .setTitle("User has left")
-            .setDescription(`A user has left ${member.guild.name}.\n\n**• Name:** ${member.user.tag} \n**• Joined Discord:** ${Moment(member.user.createdAt).format('lll')} \n **• Joined Server:** ${Moment(member.user.joinedAt).format('lll')}** \n • ID:** ${member.user.id}`)
+            .setDescription(`A user has left ${member.guild.name}.\n\n**• Name:** ${member.user.tag} \n**• Joined Discord:** ${Moment(member.user.createdAt).format('lll')} \n **• Left Server:** ${Moment(member.user.joinedAt).format('lll')}** \n • ID:** ${member.user.id}`)
             .setFooter(`Server is now at ${member.guild.memberCount} members!`);
         
         const logchannel = await this.client.channels.get(member.guild.settings.logs.channel);
