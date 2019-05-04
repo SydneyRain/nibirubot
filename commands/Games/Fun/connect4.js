@@ -12,7 +12,7 @@ function getRow(rows, number) {
 module.exports = class extends Command {
     constructor(...args) {
         super(...args, {
-			aliases: ['c4'],
+            aliases: ['c4'],
             description: language => language.get("CONNECT4_DESCRIPTION"),
             extendedHelp: language => language.get("CONNECT4_EXTENDEDHELP"),
             name: 'connect4',
